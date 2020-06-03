@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>0</y>
+      <w>176</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+-id : int
+-idUzytkownika : int
+-imie : string
+-nazwisko : string
+-numerTelefonu : string
+-email : string
+-adres : string
+--
++Adresat()
++ustawId() : void 
++ustawIdUzytkownika() : void 
++ustawImie() : void 
++ustawNazwisko() : void 
++ustawNumerTelefonu() : void 
++ustawEmail() : void 
++ustawAdres() : void 
++pobierzId() : int 
++pobierzIdUzytkownika() : int 
++pobierzImie() : string 
++pobierzNazwisko() : string 
++pobierzNumerTelefonu() : string 
++pobierzEmail() : string 
++pobierzAdres() : string </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>144</y>
+      <w>416</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+--
+-pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int 
+-pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int 
+-pobierzDaneAdresata() : Adresat 
+-zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : string 
+-czyPlikJestPusty() : bool 
++PlikZAdresatami()
++NAZWA_PLIKU_Z_ADRESATAMI : const string 
++idOstatniegoAdresata : int 
++wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector &lt;Adresat&gt; 
++dopiszAdresataDoPliku() : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>0</y>
+      <w>344</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>AdresatManager
+--
+-adresaci : vector &lt;Adresat&gt; 
+-pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int 
+-plikZAdresatami : PlikZAdresatami 
+-ID_ZALOGOWANEGO_UZYTKOWNIKA : const int 
+-wyswietlDaneAdresata() : void 
+-podajDaneNowegoAdresata() : Adresat 
++AdresatMenedzer()
++wyswietlWszystkichAdresatow() : void 
++dodajAdresata() : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>688</y>
+      <w>336</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
++konwerjsaIntNaString() : static string 
++wczytajLinie() : static string 
++zamienPierwszaLitereNaDuzaAPozostaleNaMale() : static string 
++konwersjaStringNaInt() : static int 
++wczytajZnak() : static char 
++pobierzLiczbe() : static string </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>688</y>
+      <w>312</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+--
+-uzytkownikMenedzer : UzytkownikMenedzer 
+-*adresatMenedzer : AdresatMenedzer 
+-NAZWA_PLIKU_Z_ADRESATAMI : const string 
++KsiazkaAdresowa() : 
++~KsiazkaAdresowa() : 
++rejestracjaUzytkownika() : void 
++wypiszWszystkichUzytkownikow() : void 
++dodajAdresata() : void 
++wyswietlWszystkichAdresatow() : void 
++logowanieUzytkownika() : int 
++wczytajAdresatowZalogowanegoUzytkownikaZPliku() : void 
++zmianaHaslaZalogowanegoUzytkownika() : void 
++wybierzOpcjeZMenuGlownego() : char 
++wybierzOpcjeZMenuUzytkownika() : char 
++wylogujUzytkownika() : int 
++pobierzIdZalogowanegoUzytkownika() : int </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>544</y>
+      <w>424</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+-NAZWA_PLIKU_Z_UZYTKOWNIKAMI : const string 
+-czyPlikJestPusty() : bool 
+-zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : string 
+-pobierzDaneUzytkownika() : Uzytkownik 
++PlikZUzytkownikami() : 
++dopiszUzytkownikaDoPliku() : void 
++wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt; 
++zapiszWszystkichUzytkownikowDoPliku() : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>336</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+--
+-id : int
+-login : string 
+-haslo : string 
+--
++Uzytkownik()
++ustawId(int noweId) : void 
++ustawLogin(string nowyLogin) : void 
++ustawHaslo(string noweHaslo) : void 
++pobierzId() : int 
++pobierzLogin() : string 
++pobierzHaslo() : string </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>336</y>
+      <w>256</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenedzer
+--
+-uzytkownicy : vector &lt;Uzytkownik&gt; 
+-podajDaneNowegoUzytkownika() : Uzytkownik 
+-pobierzIdNowegoUzytkownika() : int 
+-czyIstniejeLogin(string login) : bool 
+-plikZUzytkownikami : PlikZUzytkownikami 
++idZalogowanegoUzytkownika : int 
++UzytkownikMenedzer() : 
++rejestracjaUzytkownika() : void 
++wypiszWszystkichUzytkownikow() : void 
++logowanieUzytkownika() : int 
++zmianaHaslaZalogowanegoUzytkownika() : void 
++zapiszWszystkichUzytkownikowDoPliku() : void 
++czyUzytkownikJestZalogowany() : bool </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
